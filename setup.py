@@ -1,12 +1,9 @@
 #!/usr/bin/env python
 
+import pypandoc
 from distutils.core import setup
 
-try:
-    import pypandoc
-    long_description = pypandoc.convert_file('README.md', 'rst')
-except(IOError, ImportError):
-    long_description = open('README.md').read()
+long_description = pypandoc.convert_file('README.md', 'rst')
 
 setup(name='midify',
     version='0.3.2',
