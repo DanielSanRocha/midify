@@ -16,3 +16,9 @@ test: ## Run unit tests
 
 clean: ## Cleans the directory
 	@rm -rf dist
+	@rm -rf midify/__pycache__
+	@rm -rf tests/__pycache__
+	@rm -rf .pytest_cache
+	@rm -rf output.mid
+	@rm -rf notebooks/.ipynb_checkpoints
+	@rm -rf MANIFEST
