@@ -87,7 +87,7 @@ def midify(input, output, normalize_input, sample_rate, peak_min_height, peak_th
     piano_program = pretty_midi.instrument_name_to_program('Acoustic Grand Piano')
     piano = pretty_midi.Instrument(program=piano_program)
 
-    for note_number, peak in zip(notes,peaks):
+    for note_number, peak in zip(notes, peaks):
         start = peak/sample_rate
         note = pretty_midi.Note(velocity=100, pitch=note_number, start=start, end=start + midi_note_duration)
         piano.notes.append(note)
