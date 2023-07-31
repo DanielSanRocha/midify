@@ -71,7 +71,7 @@ def midify(input, output, normalize_input, sample_rate, peak_min_height, peak_th
 
     if verbose:
         click.echo("Calculating FFT for each note...")
-    notes_fft = np.array([np.abs(scipy.fft.fft(n))[0:512] for n in notes_samples])
+    notes_fft = np.array([np.abs(scipy.fft.fft(n))[0:note_sample_size//2] for n in notes_samples])
 
     if verbose:
         click.echo("Inferring notes frequencies...")
