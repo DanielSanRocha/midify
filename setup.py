@@ -2,12 +2,17 @@
 
 from distutils.core import setup
 
+try:
+    import pypandoc
+    long_description = pypandoc.convert_file('README.md', 'rst')
+except(IOError, ImportError):
+    long_description = open('README.md').read()
+
 setup(name='midify',
     version='0.3.2',
     packages=['midify'],
     description='Command line tool for converting Audio to MIDI.',
-    long_description=open('README.md').read(),
-    long_description_content_type='text/markdown',
+    long_description=long_description,
     author='Daniel Santana',
     author_email='danielsantanarocha@gmail.com',
     url='https://github.com/DanielSanRocha/midify',
