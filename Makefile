@@ -4,5 +4,8 @@ help: ## Show this help.
 build: ## Build the project
 	@python setup.py sdist
 
-upload: ## Uplad to PyPi
+upload: clean build ## Uplad to PyPi
 	@twine upload dist/*
+
+clean: ## Cleans the directory
+	@rm -rf dist
