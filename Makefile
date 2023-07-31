@@ -11,8 +11,8 @@ build: ## Build the project
 upload: clean build ## Uplad to PyPi
 	@twine upload dist/*
 
-test: ## Run unit tests
-	@PYTHONPATH=. pytest tests
+test: ## Run unit/integration tests
+	@PYTHONPATH=. pytest tests -s -p no:warnings
 
 clean: ## Cleans the directory
 	@rm -rf dist
