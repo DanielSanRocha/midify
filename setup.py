@@ -3,7 +3,8 @@
 from distutils.core import setup
 
 setup(name='midify',
-    version='0.1.1',
+    version='0.2.0',
+    packages=['midify'],
     description='Command line tool for converting Audio to MIDI.',
     author='Daniel Santana',
     author_email='danielsantanarocha@gmail.com',
@@ -12,5 +13,6 @@ setup(name='midify',
     license='MIT',
     classifiers=[
         'Development Status :: 3 - Alpha'
-    ]
+    ],
+    install_requires=['click>=8.0.0', 'pretty-midi>=0.2.10', 'scipy>=1.0.0', 'pandas>=2.0.0', 'numpy>=1.24.0']
 )
