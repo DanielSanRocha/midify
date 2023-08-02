@@ -1,4 +1,8 @@
+import click
+from scipy.fft import fft
 import numpy as np
+
+from midify import find_first_peak
 
 freqs = np.array([
         16.35,   17.32,   18.35,   19.45,   20.6 ,   21.83,   23.12,
@@ -17,3 +21,19 @@ freqs = np.array([
         3135.96, 3322.44, 3520.  , 3729.31, 3951.07, 4186.01, 4434.92,
         4698.63, 4978.03, 5274.04, 5587.65, 5919.91, 6271.93, 6644.88,
         7040.  , 7458.62, 7902.13])
+
+def identify(data, rate, height=10, threshold=0.001, verbose=False):
+        """This function identify a note by audio data."""
+
+        if verbose:
+                click.echo("Calculating FFT...")
+        fft_data = np.abs(fft(data))[0:len(data)//2]
+
+        if verbose:
+                click.echo("Inferring notes...")
+        freq = find_first_peak(fft_data, height=height, threshold=threshold) * rate / len(data)
+        if verbose:
+                click.echo(f"Estimated frequency {freq}")
+        note = np.argmin(np.abs(freqs - freq))
+
+        return note
