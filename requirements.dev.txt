@@ -1,2 +1,4 @@
 pytest==7.4.0
 pypandoc==1.11
+isort==5.12.0
+pylama==8.4.1

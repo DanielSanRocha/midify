@@ -2,6 +2,7 @@ import numpy as np
 
 from midify.resample import resample
 
+
 def test_resample_simple():
     data = np.array([0.0,1.0,0.0,1.0])
     resampled = resample(data, old_rate=2, new_rate=1)

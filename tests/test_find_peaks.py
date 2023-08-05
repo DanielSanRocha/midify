@@ -1,6 +1,7 @@
 import numpy as np
 
-from midify.find_peaks import find_peaks, find_first_peak
+from midify.find_peaks import find_first_peak, find_peaks
+
 
 def test_find_peaks_simple_data():
     data = np.array([0.0,0.0,1.0,0.0])

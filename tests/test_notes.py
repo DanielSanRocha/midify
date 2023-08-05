@@ -1,7 +1,8 @@
-import pretty_midi
 import numpy as np
+import pretty_midi
 
 from midify import identify, resample
+
 
 def test_identify_c4_piano():
     note = 60

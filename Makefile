@@ -14,6 +14,12 @@ upload: clean build ## Uplad to PyPi
 test: ## Run unit/integration tests
 	@PYTHONPATH=. pytest tests -s -p no:warnings
 
+lint: ## Check for linting errors
+	@pylama midify/
+
+isort: ## Organize imports
+	@isort .
+
 clean: ## Cleans the directory
 	@rm -rf dist
 	@rm -rf midify/__pycache__

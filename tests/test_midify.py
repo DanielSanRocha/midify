@@ -1,7 +1,8 @@
-import scipy
 import librosa
+import scipy
 
 from midify.midify import midify
+
 
 def test_riff1_wav_mono():
     filename = "samples/riff1.wav"

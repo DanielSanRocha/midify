@@ -1,5 +1,6 @@
-import scipy
 import numpy as np
+import scipy
+
 
 def find_peaks(data, height=0.002, threshold=0.00001, min_distance=600):
     peaks = scipy.signal.find_peaks(data, height=height, threshold=threshold)[0]
@@ -15,6 +16,7 @@ def find_peaks(data, height=0.002, threshold=0.00001, min_distance=600):
         q = p
 
     return np.array(filtered_peaks)
+
 
 def find_first_peak(f, height=10, threshold=0.01):
     peaks = scipy.signal.find_peaks(f, height=height, threshold=threshold)[0]

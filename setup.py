@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 
-import pypandoc
 from distutils.core import setup
+
+import pypandoc
 
 long_description = pypandoc.convert_file('README.md', 'rst')
 
